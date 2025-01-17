@@ -1,0 +1,7 @@
+/* Tailwind CSS will handle most styles. Add overrides here if needed */
+input:focus {
+    outline: none;
+    border-color: primary/900; 
+    box-shadow: 0 0 0 2px rgba(89, 30, 71, 1);
+  }
+  

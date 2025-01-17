@@ -1,16 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, RouterOutlet } from '@angular/router'; 
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
-import { routes } from './app.routes'; // Using the existing `app.routes.ts`
-
+import { routes } from './app.routes';
+import { LoginComponent } from './login/login.component';
+import { CommonModule } from '@angular/common';
 @NgModule({
-  declarations: [], // Add components here
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes) // Use existing `app.routes.ts`
+  declarations: [
+    LoginComponent
   ],
-  providers: [],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports: [RouterModule],
   bootstrap: []
 })
 export class AppModule {}
