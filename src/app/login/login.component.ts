@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-login',  // The selector used in HTML
-  templateUrl: './login.component.html',  // Linking to HTML template
-  styleUrls: ['./login.component.scss'] // Optional style file
+  selector: 'app-login',  
+  templateUrl: './login.component.html',  
+  styleUrls: ['./login.component.scss'] 
 })
 export class LoginComponent {
 
@@ -19,10 +18,9 @@ export class LoginComponent {
     });
   }
 
-  // Submit function
   submit() {
     if (this.loginForm.invalid) {
-      return; // If form is invalid, do nothing
+      return; 
     }
 
     const email = this.loginForm.get('email')?.value;
