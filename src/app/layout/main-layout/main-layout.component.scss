@@ -1,0 +1,28 @@
+/* src/app/app.component.scss */
+:host {
+    display: block;
+    height: 100vh;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Prevent page from scrolling */
+  }
+  
+  .flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure the container takes the full height */
+  }
+  
+ 
+  
+  h-screen {
+    height: calc(100vh - 64px); /* Adjust content height to fit under the header */
+    overflow-y: auto; /* Enable scrolling for the content section */
+  }
+  

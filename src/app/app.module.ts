@@ -1,20 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, RouterOutlet } from '@angular/router'; 
 import { AppComponent } from './app.component';
-import { routes } from './app.routes';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';  // For HTTP requests (if needed)
+import { FormsModule } from '@angular/forms';  // For using ngModel
+import { provideRouter } from '@angular/router';
+import { routes } from './app.routes';  // Importing your routes
+
+// Importing Components
 import { LoginComponent } from './login/login.component';
-import { CommonModule } from '@angular/common';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
+import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+
 @NgModule({
-  declarations: [
-    LoginComponent
+  declarations: [  
+    LoginComponent,
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
-    CommonModule,
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),  // Configure the routes in the app
+    HttpClientModule,
+    FormsModule  // Enable ngModel
   ],
-  exports: [RouterModule],
-  bootstrap: []
+  providers: [],
+  bootstrap: []  // Bootstrap the main component
 })
-export class AppModule {}
+export class AppModule { }

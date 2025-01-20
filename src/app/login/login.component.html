@@ -1,65 +1,57 @@
-<div class="h-screen flex items-center justify-center bg-gradient-to-br from-gray-700 via-gray-900 to-black">
-  <div
-    class="w-96 p-10 h-auto min-h-[28rem] rounded-2xl bg-white/10 backdrop-blur-lg shadow-lg flex flex-col justify-evenly"
-  >
-    <!-- Header -->
-    <h2 class="text-center text-white text-xl font-light">
-      CUSTOMER LOGIN
-    </h2>
+<div class="flex min-h-screen items-center justify-center bg-gray-100">
+  <div class="flex w-3/4 max-w-5xl shadow-lg rounded-lg bg-white overflow-hidden">
+    <!-- Left Section (Form) -->
+    <div class="w-1/2 p-10">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">Login into your account</h2>
 
-    <!-- Form -->
-    <form class="flex flex-col justify-evenly space-y-6">
-      <!-- Email Field -->
-      <div>
-        <label class="block text-gray-300 mb-2" for="email">
-          User Name
-        </label>
-        <div class="relative">
-          <span class="absolute inset-y-0 left-3 flex items-center">
-            <img
-              src="assets/Icons/Username.svg"
-              alt="User Icon"
-              class="h-5 w-5"
-            />
-          </span>
-          <input
-            id="email"
-            type="email"
-            placeholder="Enter username"
-            class="w-full pl-10 pr-4 py-2 rounded-lg bg-transparent border border-gray-300 text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+      <form (submit)="login()" class="space-y-4">
+        <!-- Email Input -->
+        <div>
+          <label class="block text-gray-600">Email Address</label>
+          <div class="relative mt-1">
+            <input type="email" [(ngModel)]="email" name="email" placeholder="alex@email.com" required 
+                   class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" />
+            <span class="absolute right-3 top-3 text-orange-500">📧</span>
+          </div>
         </div>
-      </div>
 
-      <!-- Password Field -->
-      <div>
-        <label class="block text-gray-300 mb-2" for="password">
-          Password
-        </label>
-        <div class="relative">
-          <span class="absolute inset-y-0 left-3 flex items-center">
-            <img
-              src="assets/Icons/Password.svg"
-              alt="Password Icon"
-              class="h-5 w-5"
-            />
-          </span>
-          <input
-            id="password"
-            type="password"
-            placeholder="Enter your password"
-            class="w-full pl-10 pr-4 py-2 rounded-lg bg-transparent border border-gray-300 text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+        <!-- Password Input -->
+        <div>
+          <label class="block text-gray-600">Password</label>
+          <div class="relative mt-1">
+            <input type="password" [(ngModel)]="password" name="password" placeholder="Enter your password" required 
+                   class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" />
+            <span class="absolute right-3 top-3 text-orange-500">🔒</span>
+          </div>
         </div>
-      </div>
 
-      <!-- Submit Button -->
-      <button
-        type="submit"
-        class="w-full py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-      >
-        LOGIN
-      </button>
-    </form>
+        <!-- Forgot Password -->
+        <a href="#" class="text-sm text-blue-500 hover:underline block text-right">Forgot Password?</a>
+
+        <!-- Login Button -->
+        <button type="submit"
+                class="w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition duration-200">
+          Login Now
+        </button>
+
+        <!-- Separator -->
+        <div class="flex items-center justify-center space-x-2">
+          <span class="w-1/3 border-t"></span>
+          <span class="text-sm text-gray-500">OR</span>
+          <span class="w-1/3 border-t"></span>
+        </div>
+
+        <!-- Signup Button -->
+        <button type="button"
+                class="w-full border border-orange-500 text-orange-500 py-2 rounded-lg hover:bg-orange-500 hover:text-white transition duration-200">
+          Signup Now
+        </button>
+      </form>
+    </div>
+
+    <!-- Right Section (Image) -->
+    <div class="w-1/2 bg-gray-50 flex items-center justify-center">
+      <img src="assets/image.png" alt="Login Illustration" class="w-3/4" />
+    </div>
   </div>
 </div>
